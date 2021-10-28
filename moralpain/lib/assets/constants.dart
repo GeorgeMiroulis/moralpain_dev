@@ -1,6 +1,8 @@
 // The pattern for variable naming is: <FEATURE>_<STRING_ DESCRIPTOR>.
 
 // General Constants.
+import 'package:flutter/cupertino.dart';
+
 const String APPBAR_TEXT = 'Moral Distress Survey';
 const int COLORS_UVA_BLUE = 0xFF232D4B;
 const int COLORS_UVA_ORANGE = 0xFFE57200;
@@ -25,3 +27,10 @@ const String QUESTIONNAIRE_SUBMIT_BUTTON = 'Submit';
 const String QUESTIONNAIRE_TOASTER_MESSAGE =
     'Thank You - Your response has been submitted.';
 const String QUESTIONNAIRE_QUESTIONNAIRE_PATH = 'assets/questionnaire.json';
+
+//levels of thermometer
+//const String THERMOMETER_MILD = 'Mild (1-3)';
+//const String THERMOMETER_UNCOMFORTABLE = 'Uncomfortable (4-5)';
+//const String THERMOMETER_DISTRESSING = 'Distressing (6-7)';
+//const String THERMOMETER_INTENSE = 'Intense (8-9)';
+//const String THERMOMETER_WORST_POSSIBLE = 'Worst Possible (10)';
