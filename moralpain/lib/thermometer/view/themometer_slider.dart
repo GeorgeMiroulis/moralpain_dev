@@ -1,7 +1,9 @@
+import 'dart:html';
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moralpain/assets/constants.dart';
 import 'package:moralpain/thermometer/cubit/thermometer_cubit.dart';
 
 class ThermometerSliderTrackShape extends SliderTrackShape {
@@ -64,6 +66,62 @@ class ThermometerSliderTrackShape extends SliderTrackShape {
         bbox.topLeft.translate(thermometerBaseRadius * 2, 0), bbox.bottomRight);
   }
 
+//mild text
+  void mild(Canvas canvas, Size size) {
+    final textStyle = TextStyle(
+      color: Colors.black,
+      fontSize: 23,
+    );
+
+    final textSpan = TextSpan(
+      text: 'Mild (0-3)',
+      style: textStyle,
+    );
+
+    final textPainter = TextPainter(
+      text: textSpan,
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout(
+      minWidth: 0,
+      maxWidth: size.width,
+    );
+    final offset = Offset(120, 100);
+    textPainter.paint(canvas, offset);
+
+    Transform.rotate(
+      angle: 90, //set the angel
+      alignment: Alignment.center,
+      child: Icon(Icons.format_size,
+          size: 25,
+          color: Colors.black,
+          textDirection: TextDirection.ltr,
+          semanticLabel: 'Mild (0-3)'),
+    );
+  }
+
+  //uncomfortable text
+  void uncomfortable(Canvas canvas, Size size) {
+    final textStyle = TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+    );
+    final textSpan = TextSpan(
+      text: 'Uncomfortable (4-5)',
+      style: textStyle,
+    );
+    final textPainter = TextPainter(
+      text: textSpan,
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout(
+      minWidth: 0,
+      maxWidth: size.width,
+    );
+    final offset = Offset(250, 100);
+    textPainter.paint(canvas, offset);
+  }
+
   @override
   void paint(PaintingContext context, Offset offset,
       {required RenderBox parentBox,
@@ -76,6 +134,8 @@ class ThermometerSliderTrackShape extends SliderTrackShape {
     if (sliderTheme.trackHeight == 0) {
       return;
     }
+    mild(context.canvas, Size(200, 200));
+    uncomfortable(context.canvas, Size(300, 100));
 
     // Paint Constants.
     final inactiveFillPaint = Paint()..color = inactiveFillColor;
