@@ -1,8 +1,0 @@
-# APIGateway assumes this role to invoke the lambda.
-template_path: managed_policy_attachable_role.template
-parameters:
-  Name: apigateway_s3_completed_survey_post_role
-  ManagedPolicyArns:
-    - !stack_output iam/policies/apigateway-s3-completed-survey-post/policy.yaml::PolicyArn
-  Services:
-    - apigateway.amazonaws.com

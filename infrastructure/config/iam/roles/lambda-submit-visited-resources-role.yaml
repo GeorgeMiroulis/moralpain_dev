@@ -1,8 +1,0 @@
-template_path: managed_policy_attachable_role.template
-parameters:
-  Name: lambda_submit_visited_resources_role
-  ManagedPolicyArns:
-    - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-    - !stack_output iam/policies/lambda-submit-visited-resources-policy/policy.yaml::PolicyArn
-  Services:
-    - lambda.amazonaws.com

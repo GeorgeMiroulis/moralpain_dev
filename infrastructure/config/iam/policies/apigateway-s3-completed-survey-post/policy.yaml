@@ -1,7 +1,0 @@
-template_path: iam_managed_policy.j2
-
-sceptre_user_data:
-  PolicyDocument: !file config/iam/policies/apigateway-s3-completed-survey-post/policy.json
-
-parameters:
-  Name: apigateway-s3-completed-survey-post-policy

@@ -1,7 +1,0 @@
-template_path: managed_policy_attachable_role.template
-parameters:
-  Name: apigateway_s3_survey_role
-  ManagedPolicyArns:
-    - !stack_output iam/policies/apigateway-s3-survey-readonly/policy.yaml::PolicyArn
-  Services:
-    - apigateway.amazonaws.com

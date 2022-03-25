@@ -1,9 +1,0 @@
-version=0.1
-[default.global.parameters]
-stack_name = "moralpain-api"
-
-[default.deploy.parameters]
-s3_bucket = "moralpain-templates"
-region = "us-east-1"
-confirm_changeset = true
-capabilities = "CAPABILITY_IAM"

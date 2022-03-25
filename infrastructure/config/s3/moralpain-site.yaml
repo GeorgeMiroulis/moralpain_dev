@@ -1,3 +1,0 @@
-template_path: s3_static_site.template
-parameters:
-  BucketName: moralpain-site

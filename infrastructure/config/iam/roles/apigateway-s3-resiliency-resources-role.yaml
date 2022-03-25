@@ -1,7 +1,0 @@
-template_path: managed_policy_attachable_role.template
-parameters:
-  Name: apigateway_s3_resiliency_resources_role
-  ManagedPolicyArns:
-    - !stack_output iam/policies/apigateway-s3-resiliency-resources-readonly/policy.yaml::PolicyArn
-  Services:
-    - apigateway.amazonaws.com
